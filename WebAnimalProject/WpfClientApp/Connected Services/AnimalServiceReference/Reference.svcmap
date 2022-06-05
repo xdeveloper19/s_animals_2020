@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ac8a0a00-7c66-4e77-80a1-28338cfe9e88" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49930/WebService/WCFAnimalService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCFAnimalService.disco" MetadataType="Disco" ID="7d21a1d1-b517-43db-8a5a-11140baec712" SourceId="1" SourceUrl="http://localhost:49930/WebService/WCFAnimalService.svc?disco" />
+    <MetadataFile FileName="WCFAnimalService.wsdl" MetadataType="Wsdl" ID="26c7608c-bc42-452f-b5c9-3c0ba0783286" SourceId="1" SourceUrl="http://localhost:49930/WebService/WCFAnimalService.svc?wsdl" />
+    <MetadataFile FileName="WCFAnimalService.xsd" MetadataType="Schema" ID="7effcc36-ac4f-4cbf-bbce-230c7b56e199" SourceId="1" SourceUrl="http://localhost:49930/WebService/WCFAnimalService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WCFAnimalService1.xsd" MetadataType="Schema" ID="eb1c8f84-a8ad-4366-a585-a8233372ce42" SourceId="1" SourceUrl="http://localhost:49930/WebService/WCFAnimalService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WCFAnimalService2.xsd" MetadataType="Schema" ID="c032a43e-aaf8-4c88-b9b0-711901ad9544" SourceId="1" SourceUrl="http://localhost:49930/WebService/WCFAnimalService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

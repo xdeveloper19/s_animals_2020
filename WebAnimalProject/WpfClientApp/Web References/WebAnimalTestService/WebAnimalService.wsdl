@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAnimal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAnimalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAnimalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMammal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="temp" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="isIswimming" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMammalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddMammalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAtri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="h_count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRum" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAtriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAtriResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBird">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="wings" type="tns:Color" />
+            <s:element minOccurs="1" maxOccurs="1" name="isTalking" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Color">
+        <s:restriction base="s:string">
+          <s:enumeration value="Black" />
+          <s:enumeration value="White" />
+          <s:enumeration value="Multicolored" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddBirdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddBirdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnimals">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAnimalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnimalsResult" type="tns:ArrayOfAnimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnimal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Animal" nillable="true" type="tns:Animal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Animal">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMammals">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMammalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMammalsResult" type="tns:ArrayOfMammal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMammal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Mammal" nillable="true" type="tns:Mammal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Mammal">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Animal">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Cover" type="tns:TypeCover" />
+              <s:element minOccurs="1" maxOccurs="1" name="Temperature" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsSwimming" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="TypeCover">
+        <s:restriction base="s:string">
+          <s:enumeration value="Spines" />
+          <s:enumeration value="Wool" />
+          <s:enumeration value="Shell" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetArti">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetArtiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArtiResult" type="tns:ArrayOfArtiodactyls" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArtiodactyls">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Artiodactyls" nillable="true" type="tns:Artiodactyls" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Artiodactyls">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Mammal">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IsRum" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Hoofs" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="HornAvailable" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="HornLength" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetBirds">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBirdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBirdsResult" type="tns:ArrayOfBird" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBird">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Bird" nillable="true" type="tns:Bird" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Bird">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Animal">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IsTalking" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Wings" type="tns:Color" />
+              <s:element minOccurs="1" maxOccurs="1" name="Eggs" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="RemoveAnimals">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveAnimalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveAnimalsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMammals">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveMammalsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveMammalsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveArti">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveArtiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveArtiResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveBirds">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveBirdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveBirdsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAnimalSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAnimal" />
+  </wsdl:message>
+  <wsdl:message name="AddAnimalSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMammalSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMammal" />
+  </wsdl:message>
+  <wsdl:message name="AddMammalSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMammalResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAtriSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAtri" />
+  </wsdl:message>
+  <wsdl:message name="AddAtriSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAtriResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBirdSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBird" />
+  </wsdl:message>
+  <wsdl:message name="AddBirdSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBirdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAnimalsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnimals" />
+  </wsdl:message>
+  <wsdl:message name="GetAnimalsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnimalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMammalsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMammals" />
+  </wsdl:message>
+  <wsdl:message name="GetMammalsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMammalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArtiSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArti" />
+  </wsdl:message>
+  <wsdl:message name="GetArtiSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArtiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBirdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBirds" />
+  </wsdl:message>
+  <wsdl:message name="GetBirdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBirdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAnimalsSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAnimals" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAnimalsSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAnimalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMammalsSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveMammals" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMammalsSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveMammalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveArtiSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveArti" />
+  </wsdl:message>
+  <wsdl:message name="RemoveArtiSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveArtiResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveBirdsSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveBirds" />
+  </wsdl:message>
+  <wsdl:message name="RemoveBirdsSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveBirdsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebAnimalServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAnimal">
+      <wsdl:input message="tns:AddAnimalSoapIn" />
+      <wsdl:output message="tns:AddAnimalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMammal">
+      <wsdl:input message="tns:AddMammalSoapIn" />
+      <wsdl:output message="tns:AddMammalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAtri">
+      <wsdl:input message="tns:AddAtriSoapIn" />
+      <wsdl:output message="tns:AddAtriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBird">
+      <wsdl:input message="tns:AddBirdSoapIn" />
+      <wsdl:output message="tns:AddBirdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnimals">
+      <wsdl:input message="tns:GetAnimalsSoapIn" />
+      <wsdl:output message="tns:GetAnimalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMammals">
+      <wsdl:input message="tns:GetMammalsSoapIn" />
+      <wsdl:output message="tns:GetMammalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArti">
+      <wsdl:input message="tns:GetArtiSoapIn" />
+      <wsdl:output message="tns:GetArtiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirds">
+      <wsdl:input message="tns:GetBirdsSoapIn" />
+      <wsdl:output message="tns:GetBirdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnimals">
+      <wsdl:input message="tns:RemoveAnimalsSoapIn" />
+      <wsdl:output message="tns:RemoveAnimalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMammals">
+      <wsdl:input message="tns:RemoveMammalsSoapIn" />
+      <wsdl:output message="tns:RemoveMammalsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveArti">
+      <wsdl:input message="tns:RemoveArtiSoapIn" />
+      <wsdl:output message="tns:RemoveArtiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBirds">
+      <wsdl:input message="tns:RemoveBirdsSoapIn" />
+      <wsdl:output message="tns:RemoveBirdsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebAnimalServiceSoap" type="tns:WebAnimalServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAnimal">
+      <soap:operation soapAction="http://tempuri.org/AddAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMammal">
+      <soap:operation soapAction="http://tempuri.org/AddMammal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAtri">
+      <soap:operation soapAction="http://tempuri.org/AddAtri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBird">
+      <soap:operation soapAction="http://tempuri.org/AddBird" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnimals">
+      <soap:operation soapAction="http://tempuri.org/GetAnimals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMammals">
+      <soap:operation soapAction="http://tempuri.org/GetMammals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArti">
+      <soap:operation soapAction="http://tempuri.org/GetArti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirds">
+      <soap:operation soapAction="http://tempuri.org/GetBirds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnimals">
+      <soap:operation soapAction="http://tempuri.org/RemoveAnimals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMammals">
+      <soap:operation soapAction="http://tempuri.org/RemoveMammals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveArti">
+      <soap:operation soapAction="http://tempuri.org/RemoveArti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBirds">
+      <soap:operation soapAction="http://tempuri.org/RemoveBirds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebAnimalServiceSoap12" type="tns:WebAnimalServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAnimal">
+      <soap12:operation soapAction="http://tempuri.org/AddAnimal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMammal">
+      <soap12:operation soapAction="http://tempuri.org/AddMammal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAtri">
+      <soap12:operation soapAction="http://tempuri.org/AddAtri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBird">
+      <soap12:operation soapAction="http://tempuri.org/AddBird" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnimals">
+      <soap12:operation soapAction="http://tempuri.org/GetAnimals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMammals">
+      <soap12:operation soapAction="http://tempuri.org/GetMammals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArti">
+      <soap12:operation soapAction="http://tempuri.org/GetArti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirds">
+      <soap12:operation soapAction="http://tempuri.org/GetBirds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnimals">
+      <soap12:operation soapAction="http://tempuri.org/RemoveAnimals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMammals">
+      <soap12:operation soapAction="http://tempuri.org/RemoveMammals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveArti">
+      <soap12:operation soapAction="http://tempuri.org/RemoveArti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBirds">
+      <soap12:operation soapAction="http://tempuri.org/RemoveBirds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebAnimalService">
+    <wsdl:port name="WebAnimalServiceSoap" binding="tns:WebAnimalServiceSoap">
+      <soap:address location="https://localhost:44352/WebService/WebAnimalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebAnimalServiceSoap12" binding="tns:WebAnimalServiceSoap12">
+      <soap12:address location="https://localhost:44352/WebService/WebAnimalService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

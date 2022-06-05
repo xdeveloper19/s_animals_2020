@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/AnimalsEntity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AnimalsEntity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49930/WebService/WCFAnimalService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Color">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Black" />
+      <xs:enumeration value="White" />
+      <xs:enumeration value="Multicolored" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Color" nillable="true" type="tns:Color" />
+  <xs:complexType name="ArrayOfAnimal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Animal" nillable="true" type="tns:Animal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnimal" nillable="true" type="tns:ArrayOfAnimal" />
+  <xs:complexType name="Animal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Animal" nillable="true" type="tns:Animal" />
+  <xs:complexType name="ArrayOfMammal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mammal" nillable="true" type="tns:Mammal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMammal" nillable="true" type="tns:ArrayOfMammal" />
+  <xs:complexType name="Mammal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Animal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cover" type="tns:TypeCover" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsSwimming" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Mammal" nillable="true" type="tns:Mammal" />
+  <xs:simpleType name="TypeCover">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Spines" />
+      <xs:enumeration value="Wool" />
+      <xs:enumeration value="Shell" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeCover" nillable="true" type="tns:TypeCover" />
+  <xs:complexType name="ArrayOfArtiodactyls">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Artiodactyls" nillable="true" type="tns:Artiodactyls" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArtiodactyls" nillable="true" type="tns:ArrayOfArtiodactyls" />
+  <xs:complexType name="Artiodactyls">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Mammal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Hoofs" type="xs:int" />
+          <xs:element minOccurs="0" name="HornAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HornLength" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsRum" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Artiodactyls" nillable="true" type="tns:Artiodactyls" />
+  <xs:complexType name="ArrayOfBird">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bird" nillable="true" type="tns:Bird" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBird" nillable="true" type="tns:ArrayOfBird" />
+  <xs:complexType name="Bird">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Animal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Eggs" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="ser:guid" />
+          <xs:element minOccurs="0" name="IsTalking" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Wings" type="tns:Color" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Bird" nillable="true" type="tns:Bird" />
+</xs:schema>

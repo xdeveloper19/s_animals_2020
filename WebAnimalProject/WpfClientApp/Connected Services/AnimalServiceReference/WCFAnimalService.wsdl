@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFAnimalService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49930/WebService/WCFAnimalService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49930/WebService/WCFAnimalService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49930/WebService/WCFAnimalService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AnimalsEntity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWCFAnimalService_AddAnimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAnimal" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_AddAnimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_AddMammal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMammal" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_AddMammal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMammalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_AddAtri_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAtri" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_AddAtri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAtriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_AddBird_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBird" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_AddBird_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBirdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetAnimals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnimals" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetAnimals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnimalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetMammals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMammals" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetMammals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMammalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetArti_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArti" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetArti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArtiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetBirds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirds" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_GetBirds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveAnimals_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAnimals" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveAnimals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAnimalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveMammals_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveMammals" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveMammals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveMammalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveArti_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveArti" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveArti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveArtiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveBirds_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBirds" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAnimalService_RemoveBirds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBirdsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWCFAnimalService">
+    <wsdl:operation name="AddAnimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/AddAnimal" message="tns:IWCFAnimalService_AddAnimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/AddAnimalResponse" message="tns:IWCFAnimalService_AddAnimal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMammal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/AddMammal" message="tns:IWCFAnimalService_AddMammal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/AddMammalResponse" message="tns:IWCFAnimalService_AddMammal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAtri">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/AddAtri" message="tns:IWCFAnimalService_AddAtri_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/AddAtriResponse" message="tns:IWCFAnimalService_AddAtri_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBird">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/AddBird" message="tns:IWCFAnimalService_AddBird_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/AddBirdResponse" message="tns:IWCFAnimalService_AddBird_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnimals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/GetAnimals" message="tns:IWCFAnimalService_GetAnimals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/GetAnimalsResponse" message="tns:IWCFAnimalService_GetAnimals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMammals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/GetMammals" message="tns:IWCFAnimalService_GetMammals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/GetMammalsResponse" message="tns:IWCFAnimalService_GetMammals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/GetArti" message="tns:IWCFAnimalService_GetArti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/GetArtiResponse" message="tns:IWCFAnimalService_GetArti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/GetBirds" message="tns:IWCFAnimalService_GetBirds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/GetBirdsResponse" message="tns:IWCFAnimalService_GetBirds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnimals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveAnimals" message="tns:IWCFAnimalService_RemoveAnimals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveAnimalsResponse" message="tns:IWCFAnimalService_RemoveAnimals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMammals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveMammals" message="tns:IWCFAnimalService_RemoveMammals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveMammalsResponse" message="tns:IWCFAnimalService_RemoveMammals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveArti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveArti" message="tns:IWCFAnimalService_RemoveArti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveArtiResponse" message="tns:IWCFAnimalService_RemoveArti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBirds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveBirds" message="tns:IWCFAnimalService_RemoveBirds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAnimalService/RemoveBirdsResponse" message="tns:IWCFAnimalService_RemoveBirds_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWCFAnimalService" type="tns:IWCFAnimalService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddAnimal">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/AddAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMammal">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/AddMammal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAtri">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/AddAtri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBird">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/AddBird" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnimals">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/GetAnimals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMammals">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/GetMammals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArti">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/GetArti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirds">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/GetBirds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAnimals">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/RemoveAnimals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMammals">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/RemoveMammals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveArti">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/RemoveArti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBirds">
+      <soap:operation soapAction="http://tempuri.org/IWCFAnimalService/RemoveBirds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFAnimalService">
+    <wsdl:port name="BasicHttpBinding_IWCFAnimalService" binding="tns:BasicHttpBinding_IWCFAnimalService">
+      <soap:address location="http://localhost:49930/WebService/WCFAnimalService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

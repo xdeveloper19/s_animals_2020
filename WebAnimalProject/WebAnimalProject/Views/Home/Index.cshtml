@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron text-center">
+        <h1>Мир Животных</h1>
+        <p class="lead">Веберите ниже нужный пункт</p>
+        @using (Html.BeginForm("AnimalsView", "Home"))
+        {
+            <p><button class="btn btn-primary btn-lg">Животные</button></p>
+        }
+        @using (Html.BeginForm("MammalsView", "Home"))
+        {
+            <p><button class="btn btn-primary btn-lg">Млекопитающие</button></p>
+        }
+        @using (Html.BeginForm("ArtiView", "Home"))
+        {
+            <p><button class="btn btn-primary btn-lg">Парнокопытные</button></p>
+        }
+        @using (Html.BeginForm("BirdsView", "Home"))
+        {
+            <p><button class="btn btn-primary btn-lg">Птицы</button></p>
+        }
+    </div>

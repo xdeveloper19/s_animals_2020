@@ -1,0 +1,6 @@
+C:\Users\Даниил\source\repos\Darya Developer\AnimalsConsoleApp\AnimalsEntity\bin\Debug\AnimalsEntity.dll
+C:\Users\Даниил\source\repos\Darya Developer\AnimalsConsoleApp\AnimalsEntity\bin\Debug\AnimalsEntity.pdb
+C:\Users\Даниил\source\repos\Darya Developer\AnimalsConsoleApp\AnimalsEntity\obj\Debug\AnimalsEntity.csprojAssemblyReference.cache
+C:\Users\Даниил\source\repos\Darya Developer\AnimalsConsoleApp\AnimalsEntity\obj\Debug\AnimalsEntity.csproj.CoreCompileInputs.cache
+C:\Users\Даниил\source\repos\Darya Developer\AnimalsConsoleApp\AnimalsEntity\obj\Debug\AnimalsEntity.dll
+C:\Users\Даниил\source\repos\Darya Developer\AnimalsConsoleApp\AnimalsEntity\obj\Debug\AnimalsEntity.pdb

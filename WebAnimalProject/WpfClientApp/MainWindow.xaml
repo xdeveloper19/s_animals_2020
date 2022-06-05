@@ -1,0 +1,5 @@
+﻿<NavigationWindow x:Class="WpfClientApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Главная" Height="450" Width="600" Source="HomePage.xaml">
+</NavigationWindow>

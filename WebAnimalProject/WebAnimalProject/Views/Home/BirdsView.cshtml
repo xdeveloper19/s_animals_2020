@@ -1,0 +1,53 @@
+﻿@using AnimalsEntity;
+@model  AnimalsEntity.Bird
+
+@{
+    ViewBag.Title = "Добавить птицу";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    
+    @using (Ajax.BeginForm("AddBird", new AjaxOptions { OnSuccess = "OnSuccessAddBird", HttpMethod = "Post" }))
+    {
+        <hr />
+        <div class="form-group">
+            @Html.Label("Наименование", new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            </div>
+        </div>
+        <p>
+            <div class="form-group">
+                @Html.Label("Окраска крыльев:", new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Wings, new { @class = "col-md-2 control-label" })
+                </div>
+            </div>
+        </p>
+
+        <p>
+            <div class="form-group">
+                @Html.Label("Птица говорящая?", new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.CheckBoxFor(m => m.IsTalking, new { @class = "form-control" })
+                </div>
+            </div>
+        </p>
+
+        <p>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Добавить" />
+                </div>
+            </div>
+        </p>
+    }
+
+    <p><h3>@ViewBag.Message</h3></p>
+    <div id="birds_result">
+        @Ajax.ActionLink("Просмотреть список", "Birds", new AjaxOptions { UpdateTargetId = "birds_result", OnSuccess = "OnSuccessBirds", HttpMethod = "Get", InsertionMode = InsertionMode.Replace })
+    </div>
+</div>
+

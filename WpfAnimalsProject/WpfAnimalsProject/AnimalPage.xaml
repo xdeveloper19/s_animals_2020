@@ -1,0 +1,98 @@
+﻿<Page x:Class="WpfAnimalsProject.AnimalPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAnimalsProject"
+      mc:Ignorable="d" 
+      Background="AntiqueWhite"
+      d:DesignHeight="300" d:DesignWidth="580"
+      Title="AnimalPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Column="0">
+            <TextBlock x:Name="txt_first" FontSize="15" Text=""></TextBlock>
+            <TextBox Name="edit_first" Width="130" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0"></TextBox>
+
+            <TextBlock x:Name="txt_second" Margin="0,10,0,0" FontSize="15" Text=""></TextBlock>
+            <TextBox Name="edit_second" Width="130" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0"></TextBox>
+
+            <TextBlock x:Name="txt_third" Margin="0,10,0,0" FontSize="15" Text=""></TextBlock>
+            <TextBox Name="edit_third" Width="130" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0"></TextBox>
+
+            <Button Width="130" FontFamily="bold" FontWeight="Regular"
+                        Padding="3" Height="25" Background="#FBC02D" Click="Button_Add"
+                        Foreground="White" Margin="0,30,0,0" FontSize="11">
+                Добавить объект
+            </Button>
+
+            <Button Width="130" FontFamily="bold" FontWeight="Regular"
+                        Padding="3" Height="25" Background="#FBC02D" Click="Button_Save"
+                        Foreground="White" Margin="10" FontSize="11">
+                Сохранить данные
+            </Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+
+            <StackPanel Orientation="Horizontal">
+                <GroupBox Background="White" HorizontalAlignment="Left" Width="200" Header="Поиск" Margin="10,0,0,0" Height="35">
+                    <TextBox Name="edit_search" Foreground="Green" BorderBrush="White" Height="35" FontSize="10">
+
+                    </TextBox>
+                </GroupBox>
+
+                <Button FontFamily="bold" FontWeight="Regular"
+                        Margin="10,5,0,0" Width="80" Click="Button_Search"
+                        Padding="3" Height="22" Background="#FBC02D"
+                        Foreground="White" FontSize="11">
+                    Поиск
+                </Button>
+            </StackPanel>
+            
+            
+            <DataGrid BorderThickness="1" 
+                  Padding="10" Margin="10,20,0,0" 
+                   ColumnWidth="65" HeadersVisibility="All" 
+                  GridLinesVisibility="All" HorizontalGridLinesBrush="Orange" 
+                  VerticalGridLinesBrush="LightBlue"  AutoGenerateColumns="true"
+                  Height="140" VerticalAlignment="Top" Background="White"
+                  AreRowDetailsFrozen="True" Width="290"
+                  SelectionMode="Single" RowHeight="25" CanUserAddRows="False"
+                  CanUserDeleteRows="False" ItemsSource="{Binding}"
+                  Name="tb_list" CanUserSortColumns = "False">
+
+                <!--<DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" />
+                    The Email property contains a URI.  For example "mailto:lucy0@adventure-works.com"
+                    <DataGridHyperlinkColumn Header="Email" Binding="{Binding Email}"  ContentBinding="{Binding Email, Converter={StaticResource EmailConverter}}" />
+                    <DataGridCheckBoxColumn Header="Member?" Binding="{Binding IsMember}" />
+                <DataGridComboBoxColumn Header="Order Status"  SelectedItemBinding="{Binding Status}" ItemsSource="{Binding Source={StaticResource myEnum}}" /> 
+                </DataGrid.Columns>-->
+            </DataGrid>
+
+            <StackPanel Orientation="Horizontal" Margin="0,17,0,0" HorizontalAlignment="Left">
+                <Button FontFamily="bold" FontWeight="Regular"
+                        Margin="10,5,0,0" Width="100" Click="Button_Load"
+                        Padding="3" Height="25" Background="#FBC02D"
+                        Foreground="White" FontSize="11">
+                    Загрузка списка
+                </Button>
+
+                <Button FontFamily="bold" FontWeight="Regular"
+                        Margin="90,5,0,0" Width="100" Click="Button_Delete"
+                        Padding="3" Height="25" Background="#FBC02D"
+                        Foreground="White" FontSize="11">
+                    Удаление списка
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
